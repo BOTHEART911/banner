@@ -34,6 +34,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            cursor: pointer;
         }
 
         .active {
@@ -46,13 +47,13 @@
 <div class="slider-container">
     <div class="slider">
         <div class="slide active">
-            <img src="https://images.prismic.io/botheart/aD-P1Lh8WN-LVkCX_slider-1pro.gif" alt="Imagen 1">
+            <img src="https://images.prismic.io/botheart/aD-P1Lh8WN-LVkCX_slider-1pro.gif" alt="Imagen 1" onclick="abrirURL()">
         </div>
         <div class="slide">
-            <img src="https://images.prismic.io/botheart/aD-P1Lh8WN-LVkCY_slider-2pro.gif" alt="Imagen 2">
+            <img src="https://images.prismic.io/botheart/aD-P1Lh8WN-LVkCY_slider-2pro.gif" alt="Imagen 2" onclick="abrirURL()">
         </div>
         <div class="slide">
-            <img src="https://images.prismic.io/botheart/aD-P1bh8WN-LVkCZ_slider-3pro.gif" alt="Imagen 3">
+            <img src="https://images.prismic.io/botheart/aD-P1bh8WN-LVkCZ_slider-3pro.gif" alt="Imagen 3" onclick="abrirURL()">
         </div>
     </div>
 </div>
@@ -65,11 +66,15 @@
         slides[count].classList.remove('active');
         count = (count + 1) % slides.length;
         slides[count].classList.add('active');
-        let duration = count === 0 ? 8000 : 4000; // Cambiar la duración del primer slide a 8 segundos, los demás a 4 segundos
+        let duration = count === 0 ? 8000 : 4000;
         setTimeout(nextSlide, duration);
     }
 
-    setTimeout(nextSlide, 8000); // Inicia el slider con el primer slide durante 8 segundos
+    setTimeout(nextSlide, 8000);
+
+    function abrirURL() {
+        window.location.href = "https://www.sua-url-desejada.com";
+    }
 </script>
 
 </body>
